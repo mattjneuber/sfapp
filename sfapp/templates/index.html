@@ -1,7 +1,28 @@
-<html>
+<!doctype html>
+<html lang="en-US">
 <head>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="{{ url_for('static', filename='table.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </head>
 <body>
+    <table id="data">
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Zip Code</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Beebs</td>
+                <td>Tomak</td>
+                <td>09-21-1985</td>
+                <td>76021</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
