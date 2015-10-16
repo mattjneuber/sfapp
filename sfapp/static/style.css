@@ -1,0 +1,146 @@
+body {
+    margin-top: 10px;
+}
+#container {
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+}
+
+table#data {
+    width: 100%;
+    font-family: Roboto;
+}
+
+table#data thead {
+    background: #63acb7;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+table#data thead th {
+    padding-left: 30px; padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 90%;
+    font-variant: small-caps;
+}
+
+table#data tbody tr {
+    background: #EEEDEE;
+    color: #6b6b6b;
+    font-weight: normal;
+}
+
+table#data td {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#info {
+    background: #418a95;
+    padding: 10px 0px 10px 30px;
+    color: white;
+    font-family: Roboto;
+    font-weight: bold;
+    position: relative;
+}
+
+#info span {
+    font-size: 90%;
+    font-weight: normal;
+}
+#side {
+    float: right;
+    height: 50px;
+}
+#add {
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -26px;
+    background:url(http://i.imgur.com/YS12XPU.png) center center no-repeat, rgba(0,0,0,.1);
+}
+
+input.error {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px red;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px red;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px red;
+	outline: thin auto red;
+}
+input[type="text"] {
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
+	outline: rgb(91, 157, 217) auto 5px;
+	outline-offset: 0px;
+	border: none;
+}
+
+input[type="text"].create {
+    outline: none;
+    box-shadow: none;
+    display: block;
+    font-size: 100%;
+    width: 125px;
+}
+
+label {
+    display: block;
+}
+
+.del {
+    width: 10px;
+    background: url(http://i.imgur.com/QjmGsrN.png) center center no-repeat, rgba(0,0,0,.3);
+}
+
+#create {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    float: right;
+    background: #d4d1d5;
+    z-index: 5;
+    font-family: Roboto;
+}
+
+#top-line {
+    width: 100%;
+    font-size: 120%;
+    font-weight: bold;
+    height: 52px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#top-line .header {
+    font-family: Roboto;
+    padding: 17px 0 15px 15px;
+    width: 235px;
+}
+
+#close {
+    background:url(http://i.imgur.com/QjmGsrN.png) center center no-repeat, rgba(255,0,0,.4);
+    width: 50px;
+    height: 52px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#create-body {
+    margin-top: 25px;
+    padding: 10px;
+}
+
+#create-error {
+    padding-top: 10px;
+    clear: both;
+    color: red;
+}

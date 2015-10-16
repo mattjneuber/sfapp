@@ -1,7 +1,76 @@
-<html>
+<!doctype html>
+<html lang="en-US">
 <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+    <script src="{{ url_for('static', filename='table.js') }}"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
 </head>
 <body>
+    <div id="container">
+        <div id="create">
+            <div id="top-line">
+                <div class="header">Add new record</div>
+                <div id="close"></div>
+            </div>
+            <div id="create-body">
+                <div style="float: left; margin-right: 5px;">
+                    <label>First Name</label>
+                    <input class="create" type="text" name="first_name" autocomplete="off">
+                </div>
+                <div style="float: right;">
+                    <label>Last Name</label>
+                    <input class="create" type="text" name="last_name" autocomplete="off">
+                </div>
+                <br>
+                <div style="float: left; margin-right: 5px; margin-top: 10px;">
+                    <label>Date of Birth</label>
+                    <input class="create" type="text" name="dob">
+                </div>
+                <div style="float: right; margin-top: 10px;">
+                    <label>Zip Code</label>
+                    <input class="create" type="text" name="zip_code">
+                </div>
+                <div style="float: right; margin-top: 10px;">
+                    <input type="submit" value="Submit" style="margin: 0" name="submit">
+                </div>
+                <div id="create-error"></div>
+            </div>
+        </div>
+        <div id="info">
+            Simple interactive data table
+            <br>
+            <span>Click cells to edit</span>
+            <div id="side">
+                <div id="add"></div>
+            </div>
+        </div>
+        <table id="data">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Birth</th>
+                <th>Zip Code</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for person in people: %}
+                <tr name="{{ person.id }}">
+                    <td>{{person.first_name }}</td>
+                    <td>{{ person.last_name }}</td>
+                    <td>{{ person.dob }}</td>
+                    <td>{{ person.zip_code }}</td>
+                    <td class="del"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
 </body>
 </html>
