@@ -1,3 +1,10 @@
+"""
+Simple interactive data table
+models.py - model definitions
+
+Author: Matt Neuber
+"""
+
 from sqlalchemy import Column, Integer, String, Date
 from sfapp.database import Base
 

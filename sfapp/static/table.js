@@ -13,7 +13,7 @@ $.fn.editableTableWidget = function (options) {
 			editor = activeOptions.editor.css('position', 'absolute').hide().appendTo(element.parent()),
 			active,
 			showEditor = function (select) {
-				active = element.find('td:focus');
+				active = element.find('td:focus').not('.del');
 				if (active.length) {
 					editor.val(active.text())
 						.removeClass('error')
@@ -43,13 +43,13 @@ $.fn.editableTableWidget = function (options) {
 			},
 			movement = function (element, keycode) {
 				if (keycode === ARROW_RIGHT) {
-					return element.next('td');
+					return element.next('td').not('.del');
 				} else if (keycode === ARROW_LEFT) {
-					return element.prev('td');
+					return element.prev('td').not('.del');
 				} else if (keycode === ARROW_UP) {
-					return element.parent().prev().children().eq(element.index());
+					return element.parent().prev().children().eq(element.index()).not('.del');
 				} else if (keycode === ARROW_DOWN) {
-					return element.parent().next().children().eq(element.index());
+					return element.parent().next().children().eq(element.index()).not('.del');
 				}
 				return [];
 			};
@@ -110,7 +110,7 @@ $.fn.editableTableWidget = function (options) {
 			}
 		});
 
-		element.find('td').prop('tabindex', 1);
+		element.find('td').prop('tabindex', 1).not('.del');
 
 		$(window).on('resize', function () {
 			if (editor.is(':visible')) {
